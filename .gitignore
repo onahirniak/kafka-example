@@ -103,6 +103,8 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-#
+# Kafka
 zk-single-kafka-single/
 
+# VS code
+.vscode/

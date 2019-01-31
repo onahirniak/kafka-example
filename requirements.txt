@@ -1,1 +1,5 @@
 kafka-python==1.4.4
+python-twitter==3.5.0
+python-telegram-bot==11.1.0
+schedule==0.6.0
+dynaconf==1.2.0
