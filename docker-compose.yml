@@ -6,12 +6,12 @@ networks:
     driver: bridge
 
 services:
-  producer:
-    build:
-      context: .
-      dockerfile: producer.docker
-    networks: 
-      - private
+  #producer:
+  #  build:
+  #    context: .
+  #    dockerfile: producer.docker
+  #  networks: 
+  #    - private
 
   zoo1:
     image: zookeeper:3.4.9

@@ -1,35 +1,20 @@
-import logging
-import logging.config
-from scheduler import Scheduler
-from twitter_adapter import TwitterAdapter, TwitterConfig
+import json
 
-def produce():
-	config = TwitterConfig()
-	config.key = ""
-	config.secret = ""
-	config.token_key = ""
-	config.token_secret = ""
+from kafka import KafkaProducer
+from kafka.errors import KafkaError
 
-	twitter = TwitterAdapter(config) 	
-	tweets = twitter.get_tweets("S_a_s_h_k_a_");
+from twitter_adapter import TwitterAdapter
 
-	print(tweets)
+class TwitterProducer():
+	def __init__(self, config):		
+		self.producer = KafkaProducer(
+			value_serializer=lambda m: json.dumps(m).encode('utf-8'),
+			bootstrap_servers=[config.kafka.endpoint])
+		self.adapter = TwitterAdapter(config.twitter) 	
+		self.config = config
 
-def main():
-	logging.config.fileConfig(fname='../logging.conf', disable_existing_loggers=False)
+	def produce(self):
+		tweets = self.adapter.get_tweets()
 
-	# Get the logger specified in the file
-	logger = logging.getLogger('Producer.Main')
-
-	logging.debug('Starting producer.')
-
-	scheduler = Scheduler()
-
-	scheduler.run(30, produce)
-
-	logging.debug('Shutdown producer.')
-    		
-
-main()
-
-
+		for tweet in tweets: 
+			self.producer.send(self.config.kafka.topic, tweet)

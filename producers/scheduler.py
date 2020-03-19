@@ -2,7 +2,9 @@ import schedule
 import time
 
 class Scheduler():
-    def run(self, seconds, job):
+    
+    @staticmethod
+    def run(seconds, job):
 
         schedule.every(seconds).seconds.do(job)
 
