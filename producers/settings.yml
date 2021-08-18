@@ -1,10 +1,10 @@
 default:
     KAFKA_TOPIC: tweets
     KAFKA_ENDPOINT: 'localhost:9092'
-    TWITTER_KEY: 'CmKzvguSczqMKDuj06NVvKxYl'
-    TWITTER_SECRET: 'saOHiYdzKX804VZnDOHBdVS7fkeobAiHBUT03MGSiHa1akqwIY'
-    TWITTER_TOKEN_KEY: '3630165681-htcVLJuXfCybTeBfkQmkzX5NT2LhfFGDwqWBLTN'
-    TWITTER_TOKEN_SECRET: 'NIj7Yy2unsIOyMKbRQveXh4xsAhGOcAu2s9c9sfXP8aLI'
-    TWITTER_TARGET_USER: '@S_a_s_h_k_a_'
+    TWITTER_KEY: '<empty>'
+    TWITTER_SECRET: '<empty>'
+    TWITTER_TOKEN_KEY: '<empty>'
+    TWITTER_TOKEN_SECRET: '<empty>'
+    TWITTER_TARGET_USER: '<empty>'
 staging:
     TOPIC: tweets
