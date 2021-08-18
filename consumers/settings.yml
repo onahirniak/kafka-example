@@ -2,7 +2,7 @@ default:
     KAFKA_TOPIC: tweets
     KAFKA_ENDPOINT: 'localhost:9092'
     KAFKA_GROUP: 'tweets-group'
-    TELEGRAM_BOT_API_KEY: '721276587:AAHh7D9YcRt5ms1eooPG8ptwOA-Hv0fWzgI'
-    TELEGRAM_BOT_TARGET_CHAT: '470461156'
+    TELEGRAM_BOT_API_KEY: '<empty>'
+    TELEGRAM_BOT_TARGET_CHAT: '<empty>'
 staging:
     KAFKA_TOPIC: tweets
